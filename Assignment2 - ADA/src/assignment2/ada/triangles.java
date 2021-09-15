@@ -5,7 +5,8 @@
  */
 package assignment2.ada;
 
-import java.awt.Graphics2D;
+import java.awt.Polygon;
+import java.util.HashSet;
 
 /**
  *
@@ -41,6 +42,24 @@ public class triangles {
 
         triangulation = triangulation.intersection(g); // restore concave hull and any holes
         return triangulation;
+    }
+
+    private static class DelaunayTriangulationBuilder {
+
+        public DelaunayTriangulationBuilder() {
+        }
+
+        private void setSites(Geometry g) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void setTolerance(double tolerance) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private void setSites(HashSet<Coordinate> sites) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
     }
 
 }
