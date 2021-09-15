@@ -23,7 +23,7 @@ class Geometry<Polygon> {
 
         HashSet<Coordinate> sites = new HashSet<>();
         for (int i = 0; i < tessellation.getCoordinates().length; i++) { // maybe there needs to be a list of tesselations
-            sites.add(tessellation.getCoordinates()[i]);
+            sites.add((Coordinate) tessellation.getCoordinates()[i]);
         }
 
         for (int refinement = 0; refinement < nRefinements; refinement++) {
@@ -69,7 +69,7 @@ class Geometry<Polygon> {
         }
     }
 
-    Object<> getCoordinates() {
+    Object[] getCoordinates() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
