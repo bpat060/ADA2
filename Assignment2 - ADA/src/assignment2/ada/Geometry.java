@@ -5,7 +5,6 @@
  */
 package assignment2.ada;
 
-import java.awt.Polygon;
 import java.util.HashSet;
 
 /**
@@ -14,7 +13,7 @@ import java.util.HashSet;
  */
 class Geometry<Polygon> {
 
-    public static Geometry refinedTessellation(Geometry g, int nRefinements, double tolerance) {
+    public Geometry refinedTessellation(Geometry g, int nRefinements, double tolerance) {
 
         DelaunayTessellationBuilder builder = new DelaunayTessellationBuilder();
         builder.setSites(g); // set vertex sites
@@ -50,7 +49,7 @@ class Geometry<Polygon> {
 
     }
 
-    public int getAread() {
+    public int getArea() {
 
         return 0;
 
@@ -80,6 +79,10 @@ class Geometry<Polygon> {
 
     int getNumGeometries() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Geometry getGeometryN(int i) {
+        return null;
     }
 
     Geometry intersection(Geometry g) {

@@ -53,7 +53,7 @@ public class triangle {
 
     }
 
-    public int getAread() {
+    public int getArea() {
 
         return 0;
 
