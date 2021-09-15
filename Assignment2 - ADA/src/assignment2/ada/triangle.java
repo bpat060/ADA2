@@ -20,7 +20,7 @@ public class triangle {
 
     }
 
-    public int getArea() {
+    public int getArea(int i) {
 
         return 0;
 

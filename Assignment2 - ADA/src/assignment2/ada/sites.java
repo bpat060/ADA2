@@ -11,6 +11,5 @@ package assignment2.ada;
  */
 public interface sites {
 
-    Geometry geometryFactory;
-
+    // Geometry geometryFactory;
 }
