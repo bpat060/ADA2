@@ -16,13 +16,11 @@ public class triangle {
 
     public Polygon getCentroid() {
 
-        return null;
-
     }
 
-    public int getArea() {
+    public Polygon getArea() {
 
-        return 0;
+        return null;
 
     }
 
