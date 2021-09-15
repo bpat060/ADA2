@@ -29,7 +29,8 @@ public class triangle {
 
         for (int refinement = 0; refinement < nRefinements; refinement++) {
             for (int i = 0; i < triangulation.getNumGeometries(); i++) {
-                Polygon triangle = (Polygon) triangulation.getGeometryN(i);
+                Polygon triangle;
+                triangle = (Polygon) triangulation.getGeometryN(i);
 
                 if (triangle.getArea() > 50) { // skip small triangle
                     sites.add(new Coordinate(triangle.getCentroid().getX(), triangle.getCentroid().getY()));
