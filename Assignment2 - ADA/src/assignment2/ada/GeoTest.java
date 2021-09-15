@@ -17,7 +17,8 @@ public class GeoTest
     refinedTriangulation(Geometry g, int nRefinements, double tolerance
 
 
-        ) {
+        )
+{
 
     DelaunayTriangulationBuilder builder = new DelaunayTriangulationBuilder();
         Geometry g;
