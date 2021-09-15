@@ -14,6 +14,8 @@ import java.util.HashSet;
  */
 public class triangle {
 
+    public triangle sites[];
+
     public static Geometry refinedTriangulation(Geometry g, int nRefinements, double tolerance) {
 
         DelaunayTriangulationBuilder builder = new DelaunayTriangulationBuilder();
@@ -48,6 +50,12 @@ public class triangle {
     public Polygon getCentroid() {
 
         return null;
+
+    }
+
+    public int getAread() {
+
+        return 0;
 
     }
 
