@@ -5,6 +5,11 @@
  */
 package assignment2.ada;
 
+<<<<<<< Updated upstream
+=======
+import static assignment2.ada.sites.geometryFactory;
+import java.awt.Polygon;
+>>>>>>> Stashed changes
 import java.util.HashSet;
 
 /**
@@ -22,7 +27,7 @@ class Geometry<Polygon> {
         Geometry tessellation = builder.getTriangles(geometryFactory);
 
         HashSet<Coordinate> sites = new HashSet<>();
-        for (int i = 0; i < tessellation.getCoordinates().length; i++) {
+        for (int i = 0; i < tessellation.getCoordinates().length; i++) { // maybe there needs to be a list of tesselations
             sites.add(tessellation.getCoordinates()[i]);
         }
 
@@ -30,7 +35,7 @@ class Geometry<Polygon> {
             for (int i = 0; i < tessellation.getNumGeometries(); i++) {
                 Polygon triangle = (Polygon) tessellation.getGeometryN(i);
 
-                if (triangle.getArea() > 50) { // skip small triangle
+                if (50 <= triangle.getArea()) { // skip small triangle
                     sites.add(new Coordinate(triangle.getCentroid().getX(), triangle.getCentroid().getY()));
                 }
             }
@@ -55,6 +60,10 @@ class Geometry<Polygon> {
 
     }
 
+    private Polygon getGeometryN(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     private static class DelaunayTessellationBuilder {
 
         public DelaunayTessellationBuilder() {
@@ -69,6 +78,10 @@ class Geometry<Polygon> {
         }
 
         private void setSites(HashSet<Coordinate> sites) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        private Geometry getTriangles(Geometry geometryFactory) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
     }
