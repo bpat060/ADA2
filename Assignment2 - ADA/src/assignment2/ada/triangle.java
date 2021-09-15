@@ -16,6 +16,8 @@ public class triangle {
 
     public Polygon getCentroid() {
 
+        return null;
+
     }
 
     public Polygon getArea() {
