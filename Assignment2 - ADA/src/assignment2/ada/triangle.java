@@ -12,7 +12,7 @@ import java.util.HashSet;
  *
  * @author Owner
  */
-public class triangles {
+public class triangle {
 
     public static Geometry refinedTriangulation(Geometry g, int nRefinements, double tolerance) {
 
@@ -31,7 +31,7 @@ public class triangles {
             for (int i = 0; i < triangulation.getNumGeometries(); i++) {
                 Polygon triangle = (Polygon) triangulation.getGeometryN(i);
 
-                if (triangle.getArea() > 50) { // skip small triangles
+                if (triangle.getArea() > 50) { // skip small triangle
                     sites.add(new Coordinate(triangle.getCentroid().getX(), triangle.getCentroid().getY()));
                 }
             }
@@ -42,6 +42,12 @@ public class triangles {
 
         triangulation = triangulation.intersection(g); // restore concave hull and any holes
         return triangulation;
+    }
+
+    public Polygon getCentroid() {
+
+        return null;
+
     }
 
     private static class DelaunayTriangulationBuilder {
