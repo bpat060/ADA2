@@ -5,11 +5,16 @@
  */
 package assignment2.ada;
 
-<<<<<<< Updated upstream
-=======
 import static assignment2.ada.sites.geometryFactory;
 import java.awt.Polygon;
->>>>>>> Stashed changes
+import java.util.HashSet;
+
+import java.util.HashSet;
+
+import java.util.HashSet;
+
+import static assignment2.ada.sites.geometryFactory;
+
 import java.util.HashSet;
 
 /**
@@ -18,7 +23,7 @@ import java.util.HashSet;
  */
 class Geometry<Polygon> {
 
-    public Geometry refinedTessellation(Geometry g, int nRefinements, double tolerance) {
+    public Geometry refinedTessellation(Geometry g, int nRefinements, double tolerance, Geometry geometryFactory) {
 
         DelaunayTessellationBuilder builder = new DelaunayTessellationBuilder();
         builder.setSites(g); // set vertex sites
