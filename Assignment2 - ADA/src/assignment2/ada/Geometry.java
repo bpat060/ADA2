@@ -5,16 +5,6 @@
  */
 package assignment2.ada;
 
-import static assignment2.ada.sites.geometryFactory;
-import java.awt.Polygon;
-import java.util.HashSet;
-
-import java.util.HashSet;
-
-import java.util.HashSet;
-
-import static assignment2.ada.sites.geometryFactory;
-
 import java.util.HashSet;
 
 /**
@@ -53,18 +43,6 @@ class Geometry<Polygon> {
         return tessellation;
     }
 
-    public Polygon getCentroid() {
-
-        return null;
-
-    }
-
-    public int getArea() {
-
-        return 0;
-
-    }
-
     private Polygon getGeometryN(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -91,7 +69,7 @@ class Geometry<Polygon> {
         }
     }
 
-    Object getCoordinates() {
+    Object<> getCoordinates() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -99,7 +77,7 @@ class Geometry<Polygon> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    Geometry getGeometryN(int i) {
+    Geometry getGeometryN() {
         return null;
     }
 
