@@ -75,7 +75,7 @@ class Polygon {
         p = temp;
     }
 
-    public void add(Point name) {
+    public void addPoint(Point name) {
         //resizing array if needed
         if (n >= p.length - 1) {
             resize();

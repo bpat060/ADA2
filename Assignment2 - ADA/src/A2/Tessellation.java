@@ -11,7 +11,8 @@ package A2;
  */
 //insert code for tesselating the hexagon with triangles.
 //https://lucene.apache.org/core/7_5_0/sandbox/org/apache/lucene/geo/Tessellator.html  - tesselation builder guide
-//
+//https://locationtech.github.io/jts/javadoc/org/locationtech/jts/triangulate/ConformingDelaunayTriangulationBuilder.html
+// link to DelaunayTessellationBuilder class and its methods^^^^
 //DelaunayTessellationBuilder class in assignment2.Geometry class can be usefull as thats a tesselation builder too.
 //
 public class Tessellation {

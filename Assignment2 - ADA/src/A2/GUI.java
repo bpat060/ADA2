@@ -18,16 +18,17 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 public class GUI extends JPanel implements ActionListener {
 
     private JButton addPolygonButton;
     private DrawPanel drawPanel;
+    private Timer timer;
     //list of triangles to be drawn
     ArrayList<Polygon> shapes = new ArrayList<Polygon>();
 
@@ -44,6 +45,9 @@ public class GUI extends JPanel implements ActionListener {
         drawPanel = new DrawPanel();
         add(drawPanel, BorderLayout.CENTER);
 
+        timer = new Timer(100, this);
+        timer.start();
+
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -53,7 +57,7 @@ public class GUI extends JPanel implements ActionListener {
             //creates a hexagon and loop fills in hegon points automatically
             Polygon hexagon = new Polygon();
             for (int i = 0; i < 6; i++) {
-                hexagon.add(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 6)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 6))));
+                hexagon.addPoint(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 6)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 6))));
             }
             //adding the hexagon to the list of Polygons
             shapes.add(hexagon);
@@ -61,8 +65,12 @@ public class GUI extends JPanel implements ActionListener {
             //tip - how to make a polygon
             // make a emppty polygon......Polygon triangle = new Prolygon();
             //create points for it(im just making one so you know) by......Point p1 = new Point(0,2); 0 being the x coordinate and 2 being the y.
-            //now add the point to the shape by.....triangle.add(p1);
+            //now add the point to the shape by.....triangle.addPoint(p1);
             //add that shape to the points list made above by......shapes.add(triangle);
+        }
+
+        if (source == timer) {
+            drawPanel.repaint();
         }
 
     }
@@ -79,15 +87,17 @@ public class GUI extends JPanel implements ActionListener {
 
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
-            //works when printing directly....just uncomment the code below and comment out the for code under it.
+            //works when printing directly(without using button, recommend using the button tho)......
+            // ......just uncomment the code below and comment out the for code under it.
 
 //            Polygon hexagon = new Polygon();
 //            for (int i = 0; i < 6; i++) {
-//                hexagon.add(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 6)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 6))));
+//                hexagon.addPoint(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 6)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 6))));
 //            }
 //            hexagon.paint(g);
-            //the one above works but then we have to code each polygon seperately here instead of having a button add one. 
-            //trying to make it work when the polygon is put into a list.
+            ///
+            //
+            //prints polygon list shapes when button clicked.
             for (Polygon p : shapes) {
                 p.paint(g);
             }
