@@ -11,4 +11,8 @@ package assignment2.ada;
  */
 class Coordinate {
 
+    Coordinate(int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
