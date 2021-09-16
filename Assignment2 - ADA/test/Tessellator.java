@@ -17,16 +17,13 @@ import javax.media.opengl.glu.GLU;
 import javax.media.opengl.glu.GLUtessellator;
 import javax.media.opengl.glu.GLUtessellatorCallbackAdapter;
 
-import /**
-         * Class for transforming common java awt/swing geometric forms to sets
-         * of triangles. Utilize openGL to achieve this with perfection and
-         * speed.
-         *
-         * @author nomis
-         *
-         */
-
-
+/**
+ * Class for transforming common java awt/swing geometric forms to sets of
+ * triangles. Utilize openGL to achieve this with perfection and speed.
+ *
+ * @author nomis
+ *
+ */
 public class Tessellator {
 
     private final GLU glu = new GLU();
