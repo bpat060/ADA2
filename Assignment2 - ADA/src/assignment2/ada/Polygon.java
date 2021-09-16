@@ -5,6 +5,8 @@
  */
 package assignment2.ada;
 
+import java.awt.Point;
+
 /**
  *
  * @author Owner
@@ -13,18 +15,18 @@ package assignment2.ada;
 class Polygon {
 
     Polygon triangle = new Polygon();
-    public int[] xpoints;
-    public int[] ypoints;
-    public int[] npoints;
+    public Point[] p;
+    public int n;
 
     public Polygon() {
+        n = 0;
+        p = new Point[6];
 
     }
 
-    public Polygon(int[] xpoints, int[] ypoints, int[] npoints) {
-        this.xpoints = xpoints;
-        this.ypoints = ypoints;
-        this.npoints = npoints;
+    public Polygon(Point[] p, int n) {
+        this.p = p;
+        this.n = n;
     }
 
 //dont know what centroid is
@@ -33,19 +35,20 @@ class Polygon {
         return triangle.getCentroid();
     }
 
-    public int getArea() {
-
-        return triangle.getArea();
-
+    public double getArea() {
+        double sum = 0.0;
+        for (int i = 0; i < n; i++) {
+            sum = sum + (p[i].x * p[i + 1].y) - (p[i].y * p[i + 1].x);
+        }
+        return 0.5 * sum;
     }
 
     public int getX() {
-
-        return 0;
+        return p[n].x;
     }
 
     public int getY() {
-        return 0;
+        return p[n].y;
     }
 
 }

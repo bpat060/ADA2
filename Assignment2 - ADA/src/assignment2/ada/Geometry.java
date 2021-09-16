@@ -6,6 +6,7 @@
 package assignment2.ada;
 
 import java.util.HashSet;
+import java.lang.Object;
 
 /**
  *
@@ -51,6 +52,7 @@ class Geometry<E> extends Polygon {
 
     private static class DelaunayTessellationBuilder {
 
+        //https://lucene.apache.org/core/7_5_0/sandbox/org/apache/lucene/geo/Tessellator.html  - tesselation builder guide
         public DelaunayTessellationBuilder() {
         }
 
