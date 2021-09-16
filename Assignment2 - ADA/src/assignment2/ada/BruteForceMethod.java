@@ -33,6 +33,8 @@ public class BruteForceMethod {
 
     public static void main(String args[]) {
 
+        System.out.println("Single Run Test");
+
         Scanner sc = new Scanner(System.in);
 
         String s = sc.next();
