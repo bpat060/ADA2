@@ -47,6 +47,22 @@ class Geometry<Polygon> {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    private Polygon getArea() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Polygon getCentroid() {
+
+        return null;
+
+    }
+
+    public int getArea() {
+
+        return null;
+
+    }
+
     private static class DelaunayTessellationBuilder {
 
         public DelaunayTessellationBuilder() {

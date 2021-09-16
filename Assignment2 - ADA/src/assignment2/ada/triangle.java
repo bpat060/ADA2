@@ -20,9 +20,9 @@ public class triangle {
 
     }
 
-    public int getArea(int i) {
+    public Polygon getArea() {
 
-        return 0;
+        return null;
 
     }
 
