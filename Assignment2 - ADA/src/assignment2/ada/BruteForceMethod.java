@@ -14,19 +14,19 @@ import java.util.Scanner;
 public class BruteForceMethod {
 
     public static void match(String txt, String pat) {
-        int m = pat.length();
-        int n = txt.length();
+        int first = pat.length();
+        int second = txt.length();
 
-        for (int i = 0; i <= n - m; i++) {
-            int j;
-            for (j = 0; j < m; j++) {
-                if (txt.charAt(i + j) != pat.charAt(j)) {
+        for (int l = 0; l <= second - first; l++) {
+            int z;
+            for (z = 0; z < first; z++) {
+                if (txt.charAt(l + z) != pat.charAt(z)) {
                     break;
                 }
             }
 
-            if (j == n) {
-                System.out.println("my pattern match at index" + i);
+            if (z == second) {
+                System.out.println("my pattern match at index" + l);
             }
         }
     }
