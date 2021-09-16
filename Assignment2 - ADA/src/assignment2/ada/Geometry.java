@@ -11,6 +11,8 @@ import java.util.HashSet;
  *
  * @author Sheetal
  */
+// can rename polygon to triangle.
+//geometry class gets the random shape and puts the polygons in it
 class Geometry<E> extends Polygon {
 
     public Geometry refinedTessellation(Geometry g, int nRefinements, double tolerance, Geometry geometryFactory) {
@@ -69,19 +71,15 @@ class Geometry<E> extends Polygon {
         }
     }
 
-    Object[] getCoordinates() {
+    public Object[] getCoordinates() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    int getNumGeometries() {
+    public int getNumGeometries() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    Geometry getGeometryN() {
-        return null;
-    }
-
-    Geometry intersection(Geometry g) {
+    public Geometry intersection(Geometry g) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

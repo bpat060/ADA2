@@ -9,9 +9,11 @@ package assignment2.ada;
  *
  * @author Owner
  */
+//maybe polygon draws just 1 line and geometry repeats it if necesary.
 class Polygon {
 
     Polygon triangle = new Polygon();
+//dont know what centroid is
 
     public Polygon getCentroid() {
 
