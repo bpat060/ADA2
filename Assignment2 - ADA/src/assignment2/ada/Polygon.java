@@ -13,8 +13,21 @@ package assignment2.ada;
 class Polygon {
 
     Polygon triangle = new Polygon();
-//dont know what centroid is
+    public int[] xpoints;
+    public int[] ypoints;
+    public int[] npoints;
 
+    public Polygon() {
+
+    }
+
+    public Polygon(int[] xpoints, int[] ypoints, int[] npoints) {
+        this.xpoints = xpoints;
+        this.ypoints = ypoints;
+        this.npoints = npoints;
+    }
+
+//dont know what centroid is
     public Polygon getCentroid() {
 
         return triangle.getCentroid();
@@ -27,6 +40,7 @@ class Polygon {
     }
 
     public int getX() {
+
         return 0;
     }
 
