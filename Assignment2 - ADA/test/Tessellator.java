@@ -12,11 +12,6 @@ import java.awt.geom.PathIterator;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.media.opengl.GL;
-import javax.media.opengl.glu.GLU;
-import javax.media.opengl.glu.GLUtessellator;
-import javax.media.opengl.glu.GLUtessellatorCallbackAdapter;
-
 /**
  * Class for transforming common java awt/swing geometric forms to sets of
  * triangles. Utilize openGL to achieve this with perfection and speed.

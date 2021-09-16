@@ -84,6 +84,7 @@ class Polygon {
         p[n++] = name;
         //closing polygon
         p[n] = p[0];
+
     }
 
 }

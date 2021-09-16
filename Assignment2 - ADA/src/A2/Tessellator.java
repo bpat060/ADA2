@@ -5,7 +5,6 @@
  */
 package A2;
 
-import java.lang.Object;
 import java.util.List;
 
 /**
@@ -63,6 +62,7 @@ public final class Tessellator extends Object {
         }
 
         //toString in class Object
+        @Override
         public String toString() {
 
             return null;
@@ -112,6 +112,7 @@ public final class Tessellator extends Object {
         }
 
         //toString in class Object
+        @Override
         public String toString() {
 
             return null;
