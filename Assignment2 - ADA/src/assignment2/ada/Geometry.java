@@ -11,7 +11,7 @@ import java.util.HashSet;
  *
  * @author Sheetal
  */
-class Geometry<Polygon> {
+class Geometry<E> extends Polygon {
 
     public Geometry refinedTessellation(Geometry g, int nRefinements, double tolerance, Geometry geometryFactory) {
 
@@ -30,7 +30,7 @@ class Geometry<Polygon> {
             for (int i = 0; i < tessellation.getNumGeometries(); i++) {
                 Polygon triangle = (Polygon) tessellation.getGeometryN(i);
 
-                if (50 <= triangle.getArea()) { // skip small triangle
+                if (triangle.getArea() > 50) { // skip small triangle
                     sites.add(new Coordinate(triangle.getCentroid().getX(), triangle.getCentroid().getY()));
                 }
             }
@@ -45,22 +45,6 @@ class Geometry<Polygon> {
 
     private Polygon getGeometryN(int i) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private Polygon getArea() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Polygon getCentroid() {
-
-        return null;
-
-    }
-
-    public int getArea() {
-
-        return null;
-
     }
 
     private static class DelaunayTessellationBuilder {
