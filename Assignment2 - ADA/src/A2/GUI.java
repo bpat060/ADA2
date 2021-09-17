@@ -72,14 +72,26 @@ public class GUI extends JPanel implements ActionListener {
             //adding the hexagon to the list of Polygons
             shapes.add(hexagon);
 
-            System.out.println("Points: " + hexagon);
-
+            //System.out.println("Points: " + hexagon);
             // int x = getX();
-            for (int i = 0; i < 6; i++) {
+            for (int i = 0; i < 7; i++) {
 
-                System.out.println(hexagon.getX());
+                // Get the object's location.
+                Point location = hexagon.pointList[i];
+//
+//                // Here goes your method
+                String locationString = "v" + i + " = [" + location.x + "," + location.y + "]";
+//
+//                // Then just print it
+                System.out.println(locationString);
+
+//                System.out.println("v" + i + " " + hexagon.pointList[i]);
             }
 
+//            System.out.println("v" + i + " " + hexagon.pointList[i].getX());
+//            for (Point pointList : hexagon.pointList) {
+//                System.out.println(pointList);
+//            }
             System.out.println(l);
 
             //tip - how to make a polygon
