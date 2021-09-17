@@ -32,6 +32,7 @@ public class Greedy {
 
             int x = (int) hexagon.pointList[i].getX();
             int y = (int) hexagon.pointList[i].getY();
+            int N = hexagon.numPoints;
 
             //Check condition
             if (IsValidOne(hexagon, x, y)) {
