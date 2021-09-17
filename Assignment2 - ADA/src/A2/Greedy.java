@@ -26,18 +26,9 @@ public class Greedy {
         this.isFound = isFound;
     }
 
-    public void GreedyFunc(int N, Polygon hexagon, int x, int y, boolean isFound) {
-        this.N = N;
-        this.hexagon = hexagon;
-        this.x = x;
-        this.y = y;
-        this.isFound = isFound;
-    }
-
-    public static void main(String[] arg) {
-
+    public void GreedyFunction(int N, Polygon hexagon, int x, int y, boolean isFound) {
         ArrayList<Polygon> shapes = new ArrayList<Polygon>();
-        Polygon hexagon = new Polygon();
+        hexagon = new Polygon();
 
         for (int i = 0; i < 6; i++) {
             hexagon.addPoint(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 6)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 6))));
@@ -50,15 +41,16 @@ public class Greedy {
             String locationString = "v" + i + " = [" + location.x + "," + location.y + "]";
             System.out.println(locationString);
 
-            int x = (int) hexagon.pointList[i].getX();
-            int y = (int) hexagon.pointList[i].getY();
-            int N = hexagon.numPoints;
-            boolean isFound = false;
+            x = (int) hexagon.pointList[i].getX();
+            y = (int) hexagon.pointList[i].getY();
+            N = hexagon.numPoints;
+            isFound = false;
 
             //Check condition
             if (IsValidOne(hexagon, x, y)) {
                 //Initialize
-                hexagon.pointList[x][y] = 1;
+                hexagon.pointList[x].x = 1;
+                hexagon.pointList[y].y = 1;
                 //Check condition
                 if (x == N - 1) {
                     //Update
@@ -68,7 +60,7 @@ public class Greedy {
                     Greedy(hexagon);
                 }
                 //Function call
-                GreedyFunc(N, hexagon, x + 1, 0, isFound);
+                GreedyFunction(N, hexagon, x + 1, 0, isFound);
             } //Otherwise
             else {
                 //Loop
@@ -80,9 +72,13 @@ public class Greedy {
                     y = arr[1];
                 }
                 //Function call
-                GreedyFunc(N, hexagon, x, y + 1, false);
+                GreedyFunction(N, hexagon, x, y + 1, false);
             }
         }
+    }
+
+    public static void main(String[] arg) {
+
     }
 
     private static void Greedy(Polygon hexagon) {
