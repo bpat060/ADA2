@@ -14,19 +14,19 @@ import java.util.ArrayList;
  */
 public class Greedy {
 
-    int N, x, y;
+    int num, x, y;
     Polygon hexagon;
     boolean isFound;
 
-    public Greedy(int N, Polygon hexagon, int x, int y, boolean isFound) {
-        this.N = N;
+    public Greedy(int num, Polygon hexagon, int x, int y, boolean isFound) {
+        this.num = num;
         this.hexagon = hexagon;
         this.x = x;
         this.y = y;
         this.isFound = isFound;
     }
 
-    public void GreedyFunction(int N, Polygon hexagon, int x, int y, boolean isFound) {
+    public void GreedyFunction(int num, Polygon hexagon, int x, int y, boolean isFound) {
         ArrayList<Polygon> shapes = new ArrayList<Polygon>();
         hexagon = new Polygon();
 
@@ -43,7 +43,7 @@ public class Greedy {
 
             x = (int) hexagon.pointList[i].getX();
             y = (int) hexagon.pointList[i].getY();
-            N = hexagon.numPoints;
+            num = hexagon.numPoints;
             isFound = false;
 
             //Check condition
@@ -52,7 +52,7 @@ public class Greedy {
                 hexagon.pointList[x].x = 1;
                 hexagon.pointList[y].y = 1;
                 //Check condition
-                if (x == N - 1) {
+                if (x == num - 1) {
                     //Update
                     isFound = true;
 
@@ -60,11 +60,11 @@ public class Greedy {
                     Greedy(hexagon);
                 }
                 //Function call
-                GreedyFunction(N, hexagon, x + 1, 0, isFound);
+                GreedyFunction(num, hexagon, x + 1, 0, isFound);
             } //Otherwise
             else {
                 //Loop
-                while (y >= N - 1) {
+                while (y >= num - 1) {
                     //Function call
                     int[] arr = TrackingGreedy(hexagon, x, y);
                     //Update
@@ -72,7 +72,7 @@ public class Greedy {
                     y = arr[1];
                 }
                 //Function call
-                GreedyFunction(N, hexagon, x, y + 1, false);
+                GreedyFunction(num, hexagon, x, y + 1, false);
             }
         }
     }
