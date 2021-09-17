@@ -113,7 +113,7 @@ class Polygon {
         String s = "";
         s = s + "[ ";
         for (int i = 0; i <= numPoints; i++) {
-            s = s + pointList[i] + " ";
+            s = s + pointList[i].x + ", " + pointList[i].y + "] [";
         }
         s = s + "]";
         return s;
