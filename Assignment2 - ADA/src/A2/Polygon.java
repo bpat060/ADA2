@@ -17,32 +17,32 @@ class Polygon {
 
     //list of points aka point[1] can consist of x=1, y=2....whatever we set it to be.
     //adding a new point is all done in GUI class
-    public Point[] p;
+    public Point[] pointList;
     // number of points in the polygon
-    public int n;
+    public int numPoints;
 
     //default constructor of a polygon
     public Polygon() {
-        n = 0;
+        numPoints = 0;
         //point number doesnt really matter for now.
-        p = new Point[6];
+        pointList = new Point[6];
 
     }
 
     public Polygon(Point[] p, int n) {
-        this.p = p;
-        this.n = n;
+        this.pointList = p;
+        this.numPoints = n;
     }
 
     public int size() {
-        return n;
+        return numPoints;
     }
 
     //getting total perimeter of the polygon
     public double perimeter() {
         double sum = 0.0;
-        for (int i = 0; i < n; i++) {
-            sum = sum + p[i].distance(p[i + 1]);
+        for (int i = 0; i < numPoints; i++) {
+            sum = sum + pointList[i].distance(pointList[i + 1]);
         }
         return sum;
     }
@@ -50,47 +50,47 @@ class Polygon {
     public void paint(Graphics g) {
         g.setColor(Color.black);
         //joining the first to last points
-        for (int i = 0; i < n - 1; i++) {
-            g.drawLine(p[i].x, p[i].y, p[i + 1].x, p[i + 1].y);
+        for (int i = 0; i < numPoints - 1; i++) {
+            g.drawLine(pointList[i].x, pointList[i].y, pointList[i + 1].x, pointList[i + 1].y);
         }
         //joininig first and last point
-        g.drawLine(p[0].x, p[0].y, p[n - 1].x, p[n - 1].y);
+        g.drawLine(pointList[0].x, pointList[0].y, pointList[numPoints - 1].x, pointList[numPoints - 1].y);
     }
 
     //calculating area of polygon
     public double getArea() {
         double sum = 0.0;
-        for (int i = 0; i < n; i++) {
-            sum = sum + (p[i].x * p[i + 1].y) - (p[i].y * p[i + 1].x);
+        for (int i = 0; i < numPoints; i++) {
+            sum = sum + (pointList[i].x * pointList[i + 1].y) - (pointList[i].y * pointList[i + 1].x);
         }
         return 0.5 * sum;
     }
 
     //resizing point array
     private void resize() {
-        Point[] temp = new Point[2 * n + 1];
-        for (int i = 0; i <= n; i++) {
-            temp[i] = p[i];
+        Point[] temp = new Point[2 * numPoints + 1];
+        for (int i = 0; i <= numPoints; i++) {
+            temp[i] = pointList[i];
         }
-        p = temp;
+        pointList = temp;
     }
 
     public void addPoint(Point name) {
         //resizing array if needed
-        if (n >= p.length - 1) {
+        if (numPoints >= pointList.length - 1) {
             resize();
         }
         //adding point
-        p[n++] = name;
+        pointList[numPoints++] = name;
         //closing polygon
-        p[n] = p[0];
+        pointList[numPoints] = pointList[0];
     }
 
     public double getX(Point x) {
         Point pointX = null;
-        for (int i = 0; i <= n; i++) {
-            if (p[i].equals(x)) {
-                pointX = p[i];
+        for (int i = 0; i <= numPoints; i++) {
+            if (pointList[i].equals(x)) {
+                pointX = pointList[i];
             }
         }
         return pointX.x;
@@ -98,22 +98,22 @@ class Polygon {
 
     public double getY(Point y) {
         Point pointY = null;
-        for (int i = 0; i <= n; i++) {
-            if (p[i].equals(y)) {
-                pointY = p[i];
+        for (int i = 0; i <= numPoints; i++) {
+            if (pointList[i].equals(y)) {
+                pointY = pointList[i];
             }
         }
         return pointY.y;
     }
 
     public String toString() {
-        if (n == 0) {
+        if (numPoints == 0) {
             return "[ ]";
         }
         String s = "";
         s = s + "[ ";
-        for (int i = 0; i <= n; i++) {
-            s = s + p[i] + " ";
+        for (int i = 0; i <= numPoints; i++) {
+            s = s + pointList[i].x + ", " + pointList[i].y + "] [";
         }
         s = s + "]";
         return s;

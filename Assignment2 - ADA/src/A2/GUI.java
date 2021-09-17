@@ -72,7 +72,7 @@ public class GUI extends JPanel implements ActionListener {
             }
             //adding the hexagon to the list of Polygons
             shapes.add(hexagon);
-            System.out.println(hexagon);
+            System.out.println("Points: " + hexagon);
 
             System.out.println(l);
 
