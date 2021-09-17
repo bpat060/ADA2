@@ -42,13 +42,13 @@ public final class Tessellator extends Object {
 
         //compare nodes by y then x
         public int compare(Tessellator.Node other) {
-            int result;
+            int result = 0;
             for (int i = 0; i <= polygon.numPoints; i++) {
                 result = (int) compare(this.polygon.pointList[i].x, other.polygon.pointList[i].x);
+                System.out.println(result);
                 return result;
             }
-            return 0;
-
+            return result;
         }
 
         public static double compare(int n1, int n2) {
@@ -76,14 +76,14 @@ public final class Tessellator extends Object {
         //get the x value
         public double getX() {
 
-            return 0;
+            return polygon.pointList[index].x;
 
         }
 
         //get the y value
         public double getY() {
 
-            return 0;
+            return polygon.pointList[index].y;
 
         }
 
