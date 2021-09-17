@@ -14,6 +14,26 @@ import java.util.ArrayList;
  */
 public class Greedy {
 
+    int N, x, y;
+    Polygon hexagon;
+    boolean isFound;
+
+    public Greedy(int N, Polygon hexagon, int x, int y, boolean isFound) {
+        this.N = N;
+        this.hexagon = hexagon;
+        this.x = x;
+        this.y = y;
+        this.isFound = isFound;
+    }
+
+    public void GreedyFunc(int N, Polygon hexagon, int x, int y, boolean isFound) {
+        this.N = N;
+        this.hexagon = hexagon;
+        this.x = x;
+        this.y = y;
+        this.isFound = isFound;
+    }
+
     public static void main(String[] arg) {
 
         ArrayList<Polygon> shapes = new ArrayList<Polygon>();
@@ -33,6 +53,7 @@ public class Greedy {
             int x = (int) hexagon.pointList[i].getX();
             int y = (int) hexagon.pointList[i].getY();
             int N = hexagon.numPoints;
+            boolean isFound = false;
 
             //Check condition
             if (IsValidOne(hexagon, x, y)) {
@@ -44,31 +65,31 @@ public class Greedy {
                     isFound = true;
 
                     //Function call
-                    ShowBoard(hexagon);
+                    Greedy(hexagon);
                 }
                 //Function call
-                NQueenFunc(N, hexagon, x + 1, 0, isFound);
+                GreedyFunc(N, hexagon, x + 1, 0, isFound);
             } //Otherwise
             else {
                 //Loop
                 while (y >= N - 1) {
                     //Function call
-                    int[] arr = BackTrackingDFSGreedy(hexagon, x, y);
+                    int[] arr = TrackingGreedy(hexagon, x, y);
                     //Update
                     x = arr[0];
                     y = arr[1];
                 }
                 //Function call
-                NQueenFunc(N, hexagon, x, y + 1, false);
+                GreedyFunc(N, hexagon, x, y + 1, false);
             }
         }
     }
 
-    private static void ShowBoard(Polygon hexagon) {
+    private static void Greedy(Polygon hexagon) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private static int[] BackTrackingDFSGreedy(Polygon hexagon, int x, int y) {
+    private static int[] TrackingGreedy(Polygon hexagon, int x, int y) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
