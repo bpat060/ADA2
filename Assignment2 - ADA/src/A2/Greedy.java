@@ -30,43 +30,48 @@ public class Greedy {
             String locationString = "v" + i + " = [" + location.x + "," + location.y + "]";
             System.out.println(locationString);
 
-            double x = hexagon.pointList[i].getX();
-            double y = hexagon.pointList[i].getY();
+            int x = (int) hexagon.pointList[i].getX();
+            int y = (int) hexagon.pointList[i].getY();
 
             //Check condition
-            if (Polygon.class == !isFound) {
+            if (IsValidOne(hexagon, x, y)) {
+                //Initialize
+                hexagon.pointList[x][y] = 1;
                 //Check condition
-                if (IsValidOne(qBoard, i1, j1)) {
-                    //Initialize
-                    qBoard[i1][j1] = 1;
-
-                    //Check condition
-                    if (i1 == N - 1) {
-                        //Update
-                        isFound = true;
-
-                        //Function call
-                        ShowBoard(qBoard);
-                    }
+                if (x == N - 1) {
+                    //Update
+                    isFound = true;
 
                     //Function call
-                    NQueenFunc(N, qBoard, i1 + 1, 0, isFound);
-                } //Otherwise
-                else {
-                    //Loop
-                    while (j1 >= N - 1) {
-                        //Function call
-                        int[] arr = BackTrackingDFSGreedy(qBoard, i1, j1);
-
-                        //Update
-                        i1 = arr[0];
-                        j1 = arr[1];
-                    }
-
-                    //Function call
-                    NQueenFunc(N, qBoard, i1, j1 + 1, false);
+                    ShowBoard(hexagon);
                 }
+                //Function call
+                NQueenFunc(N, hexagon, x + 1, 0, isFound);
+            } //Otherwise
+            else {
+                //Loop
+                while (y >= N - 1) {
+                    //Function call
+                    int[] arr = BackTrackingDFSGreedy(hexagon, x, y);
+                    //Update
+                    x = arr[0];
+                    y = arr[1];
+                }
+                //Function call
+                NQueenFunc(N, hexagon, x, y + 1, false);
             }
         }
+    }
+
+    private static void ShowBoard(Polygon hexagon) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static int[] BackTrackingDFSGreedy(Polygon hexagon, int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    private static boolean IsValidOne(Polygon hexagon, int x, int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
