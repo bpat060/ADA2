@@ -40,10 +40,14 @@ public class Brute extends Polygon {
                 for (int j = 0; j < y; j++) {
                     if (hexagon.pointList[j + a].x != hexagon.pointList[j].y) {
                         flag = false;
+                    } else {
+                        break;
                     }
                 }
                 if (true == flag) {
                     System.out.println("Pattern found at index: " + i);
+                } else {
+                    break;
                 }
             }
         }
