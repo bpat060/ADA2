@@ -7,6 +7,8 @@
  *
  * @author Owner
  */
+import java.lang.Object;
+
 import java.awt.Shape;
 import java.awt.geom.PathIterator;
 import java.util.ArrayList;

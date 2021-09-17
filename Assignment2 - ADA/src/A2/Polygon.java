@@ -84,7 +84,38 @@ class Polygon {
         p[n++] = name;
         //closing polygon
         p[n] = p[0];
-
     }
 
+    public double getX(Point x) {
+        Point pointX = null;
+        for (int i = 0; i <= n; i++) {
+            if (p[i].equals(x)) {
+                pointX = p[i];
+            }
+        }
+        return pointX.x;
+    }
+
+    public double getY(Point y) {
+        Point pointY = null;
+        for (int i = 0; i <= n; i++) {
+            if (p[i].equals(y)) {
+                pointY = p[i];
+            }
+        }
+        return pointY.y;
+    }
+
+    public String toString() {
+        if (n == 0) {
+            return "[ ]";
+        }
+        String s = "";
+        s = s + "[ ";
+        for (int i = 0; i <= n; i++) {
+            s = s + p[i] + " ";
+        }
+        s = s + "]";
+        return s;
+    }
 }

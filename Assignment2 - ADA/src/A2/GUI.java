@@ -58,9 +58,11 @@ public class GUI extends JPanel implements ActionListener {
             Polygon hexagon = new Polygon();
             for (int i = 0; i < 6; i++) {
                 hexagon.addPoint(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 6)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 6))));
+
             }
             //adding the hexagon to the list of Polygons
             shapes.add(hexagon);
+            System.out.println(hexagon);
 
             //tip - how to make a polygon
             // make a emppty polygon......Polygon triangle = new Prolygon();
