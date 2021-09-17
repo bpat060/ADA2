@@ -5,6 +5,7 @@
  */
 package A2;
 
+import java.awt.Point;
 import java.util.List;
 
 /**
@@ -18,32 +19,51 @@ public final class Tessellator extends Object {
     protected static class Node {
 
         static Node start;
+        static Node next;
+        static Node previous;
 
-        int data;
-        Node next = new Node();
-        Node prev = new Node();
+        int index;
+        int vertexIndex;
+        Polygon polygon;
 
         protected Node(Polygon polygon, int index, int vertexIndex) {
-
+            this.polygon = polygon;
+            this.index = index;
+            this.vertexIndex = vertexIndex;
         }
 
         //simple deep copy constructor
         protected Node(Tessellator.Node other) {
+            this.index = other.index;
+            this.polygon = other.polygon;
+            this.vertexIndex = other.vertexIndex;
 
         }
 
         //compare nodes by y then x
         public int compare(Tessellator.Node other) {
-
+            int result;
+            for (int i = 0; i <= polygon.numPoints; i++) {
+                result = (int) compare(this.polygon.pointList[i].x, other.polygon.pointList[i].x);
+                return result;
+            }
             return 0;
 
         }
 
+        public static double compare(int n1, int n2) {
+            return (n1 < n2) ? -1 : ((n1 == n2) ? 0 : 1);
+        }
+
         //get the latitude value
         public double getLat() {
+            Point point = null;
+            for (int i = 0; i <= polygon.numPoints; i++) {
 
-            return 0;
+                point = polygon.pointList[i];
 
+            }
+            return point.x;
         }
 
         //get the longitude value
