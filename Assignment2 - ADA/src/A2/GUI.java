@@ -69,6 +69,23 @@ public class GUI extends JPanel implements ActionListener {
             for (int i = 0; i < 6; i++) {
                 hexagon.addPoint(new Point((int) (100 + 50 * Math.cos(i * 2 * Math.PI / 6)), (int) (100 + 50 * Math.sin(i * 2 * Math.PI / 6))));
             }
+
+            //for loop^ hardcoded
+//            Point v1 = new Point(150, 100);
+//            Point v2 = new Point(125, 143);
+//            Point v3 = new Point(75, 143);
+//            Point v4 = new Point(50, 100);
+//            Point v5 = new Point(74, 56);
+//            Point v6 = new Point(125, 56);
+//            Point v7 = new Point(150, 100);
+//
+//            hexagon.addPoint(v1);
+//            hexagon.addPoint(v2);
+//            hexagon.addPoint(v3);
+//            hexagon.addPoint(v4);
+//            hexagon.addPoint(v5);
+//            hexagon.addPoint(v6);
+//            hexagon.addPoint(v7);
             //adding the hexagon to the list of Polygons
             shapes.add(hexagon);
 

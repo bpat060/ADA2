@@ -17,6 +17,12 @@ public final class Tessellator extends Object {
 
     protected static class Node {
 
+        static Node start;
+
+        int data;
+        Node next = new Node();
+        Node prev = new Node();
+
         protected Node(Polygon polygon, int index, int vertexIndex) {
 
         }
@@ -136,6 +142,10 @@ public final class Tessellator extends Object {
 
     //compute whether the given x, y point is in a triangle; uses the winding order method
     public static boolean pointInTriangle(double x, double y, double ax, double ay, double bx, double by, double cx, double cy) {
+        int winding = 0;
+        for (int i = 0; i < 7; i++) {
+
+        }
 
         return false;
 

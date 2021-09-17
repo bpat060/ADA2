@@ -13,7 +13,7 @@ import java.awt.Point;
  *
  * @author Owner
  */
-class Polygon {
+public class Polygon {
 
     //list of points aka point[1] can consist of x=1, y=2....whatever we set it to be.
     //adding a new point is all done in GUI class
