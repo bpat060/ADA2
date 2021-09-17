@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
@@ -29,11 +30,20 @@ public class GUI extends JPanel implements ActionListener {
     private JButton addPolygonButton;
     private DrawPanel drawPanel;
     private Timer timer;
+    private JLabel l;
     //list of triangles to be drawn
     ArrayList<Polygon> shapes = new ArrayList<Polygon>();
 
     public GUI() {
         super(new BorderLayout());
+
+        JLabel label = new JLabel();
+        add(label, BorderLayout.NORTH);
+
+        l = new JLabel("Text");
+        l.setText("label text");
+        l.setForeground(Color.BLACK);
+        label.add(l);
 
         JPanel southPanel = new JPanel();
         add(southPanel, BorderLayout.SOUTH);
@@ -63,6 +73,8 @@ public class GUI extends JPanel implements ActionListener {
             //adding the hexagon to the list of Polygons
             shapes.add(hexagon);
             System.out.println(hexagon);
+
+            System.out.println(l);
 
             //tip - how to make a polygon
             // make a emppty polygon......Polygon triangle = new Prolygon();
@@ -116,5 +128,6 @@ public class GUI extends JPanel implements ActionListener {
         Dimension frameDimension = frame.getSize();
         frame.setLocation((screenDimension.width - frameDimension.width) / 2, (screenDimension.height - frameDimension.height) / 2);
         frame.setVisible(true);
+
     }
 }
